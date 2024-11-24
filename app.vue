@@ -1,10 +1,13 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+const currentLayout = ref('default');
+</script>
+
 <template>
   <div>
-<!--    <NuxtRouteAnnouncer />-->
-<!--    <NuxtWelcome />-->
-    <ui-input name="haha" type="text" label="Username"/>
+    <NuxtLayout></NuxtLayout>
   </div>
 </template>
-<script setup lang="ts">
-import UiInput from "~/components/form/UiInput.vue";
-</script>
+
+<style scoped lang="scss">
+</style>
