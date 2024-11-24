@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { defineEmits, defineProps } from 'vue';
 import type { PropType } from 'vue';
+import { ref, watch } from 'vue';
 import { useInputValidator } from "~/composables/useInputValidator";
+
 // Define Props
 const props = defineProps({
   name: {
@@ -11,7 +13,7 @@ const props = defineProps({
   label: {
     type: String,
     required: false,
-    default: 'Name Label',
+    default: '',
   },
   placeholder: {
     type: String,
@@ -28,40 +30,56 @@ const props = defineProps({
     required: false,
     default: '',
   },
+  validate: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    required: false,
+    default: false,
+  }
 });
 
 const emit = defineEmits(['update:modelValue']);
-const inputValue = ref('');
 const { errorMessage, validate } = useInputValidator(props.type);
+const inputValue = ref(props.modelValue);
+
+watch(
+    () => props.modelValue,
+    (newValue) => {
+      inputValue.value = newValue;
+    }
+);
+
 const handleInput = (event: Event) => {
   const value = (event.target as HTMLInputElement).value;
-  validate(value);
-
-  // Emit valid value to parent component only if there is no error
-  if (!errorMessage.value) {
-    emit('update:modelValue', value);
-  }
-}
+  inputValue.value = value;
+  if (props.validate) validate(value);
+  emit('update:modelValue', value);
+};
 </script>
 
 <template>
-  <div class="form-control">
-    <label :for="props.name" class="form-label">{{ props.label }}</label>
+  <div :class="['form-control']">
+    <label :for="props.name" v-if="props.label" class="form-label">{{ props.label }}</label>
     <input
         :id="props.name"
         class="form-input"
         :type="props.type"
-        :placeholder="placeholder"
+        :placeholder="props.placeholder"
         v-model="inputValue"
         @input="handleInput"
+        :disabled="props.disabled"
     />
-    <span v-if="errorMessage" class="error-message">{{ errorMessage }}</span>
+    <span v-if="errorMessage && props.validate" class="error-message">{{ errorMessage }}</span>
   </div>
 </template>
 
 <style scoped>
 .form-control {
-  @apply flex flex-col mb-4;
+  @apply flex flex-col mb-2;
 }
 
 .form-label {

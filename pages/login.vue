@@ -15,6 +15,7 @@
               label="Username"
               placeholder="Enter your username"
               type="text"
+              :validate="true"
           />
           <ui-input
               v-model="storeAuth.formLogin.email"
@@ -22,6 +23,7 @@
               label="Email"
               placeholder="Enter your email"
               type="email"
+              :validate="true"
           />
           <div class="flex gap-3 mt-6">
             <ui-button type="submit" styleClass="w-full" :outline="false" :label="'Login'" variant="primary" />

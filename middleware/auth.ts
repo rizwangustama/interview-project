@@ -10,7 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     } else {
         parseCookie = JSON.parse(getCookie);
     }
-    if (!parseCookie) {
+    if (!parseCookie && to.path === '/') {
         return navigateTo('/login');
     }
 

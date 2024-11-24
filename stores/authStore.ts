@@ -3,10 +3,10 @@ import { useUserStore } from "~/stores/userStore";
 import { useCookie } from "#app";
 export const useAuthStore = defineStore('auth', {
     state: () => ({
-        formLogin: {
+        formLogin: ref({
             username: '',
             email: '',
-        },
+        }),
         userDetails: '',
         isAuthenticated: false,
     }),
