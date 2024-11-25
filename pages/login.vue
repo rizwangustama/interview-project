@@ -3,35 +3,35 @@
     <div class="container w-[900px] mx-auto">
       <div class="border border-slate-200 overflow-hidden rounded-lg flex flex-row">
         <div class="bg-teal-500 h-auto flex w-1/2">
-          <img height="100" width="100" class="h-[400px] w-full" :src="dataBackground" >
+          <img height="100" width="100" class="h-[400px] w-full" :src="dataBackground">
         </div>
         <div class="w-1/2 p-8 bg-white relative">
           <div class="bg-teal-700 h-1.5 w-full absolute bottom-0 left-0"></div>
-        <h2 class="text-teal-700 font-semibold text-xl text-center mb-10">Form Login</h2>
-        <form  @submit.prevent="onSubmitLogin">
-          <ui-input
-              v-model="storeAuth.formLogin.username"
-              name="username"
-              label="Username"
-              placeholder="Enter your username"
-              type="text"
-              :validate="true"
-          />
-          <ui-input
-              v-model="storeAuth.formLogin.email"
-              name="email"
-              label="Email"
-              placeholder="Enter your email"
-              type="email"
-              :validate="true"
-          />
-          <div class="flex gap-3 mt-6">
-            <ui-button type="submit" styleClass="w-full" :outline="false" :label="'Login'" variant="primary" />
-            <ui-button type="button" styleClass="w-full" :outline="true" :label="'Registration'" variant="primary" />
-          </div>
+          <h2 class="text-teal-700 font-semibold text-xl text-center mb-10">Form Login</h2>
+          <form @submit.prevent="onSubmitLogin">
+            <ui-input
+                v-model="storeAuth.formLogin.username"
+                name="username"
+                label="Username"
+                placeholder="Enter your username"
+                type="text"
+                :validate="true"
+            />
+            <ui-input
+                v-model="storeAuth.formLogin.email"
+                name="email"
+                label="Email"
+                placeholder="Enter your email"
+                type="email"
+                :validate="true"
+            />
+            <div class="flex gap-3 mt-6">
+              <ui-button type="submit" styleClass="w-full" :outline="false" :label="'Login'" variant="primary"/>
+              <ui-button type="button" styleClass="w-full" :outline="true" :label="'Registration'" variant="primary"/>
+            </div>
 
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -40,12 +40,13 @@
 definePageMeta({
   layout: 'auth',
 });
-import { ref } from 'vue';
+import {ref} from 'vue';
 import UiInput from "~/components/form/UiInput.vue";
 import UiButton from "~/components/form/UiButton.vue";
-import { useRouter } from "vue-router";
-import { useAuthStore } from "~/stores/authStore";
-import { useUserStore } from "~/stores/userStore";
+import {useRouter} from "vue-router";
+import {useAuthStore} from "~/stores/authStore";
+import {useUserStore} from "~/stores/userStore";
+
 const storeAuth = useAuthStore();
 const storeUsers = useUserStore();
 const router = useRouter();

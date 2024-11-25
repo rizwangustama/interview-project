@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
+import {defineProps, defineEmits} from 'vue';
+
 const props = defineProps({
   label: {
     type: String,
@@ -7,7 +8,7 @@ const props = defineProps({
     default: 'submit',
   },
   type: {
-    type:  String as PropType<'reset' | 'submit' | 'button' | undefined | null>,
+    type: String as PropType<'reset' | 'submit' | 'button' | undefined | null>,
     required: false,
     default: 'button'
   },
@@ -42,7 +43,8 @@ const emit = defineEmits(['click']);
       :class="['ui-button', `ui-button--${variant}`, `${styleClass}`]"
       :type="props.type"
       :disabled="props.disabled"
-      @click="$emit('click')">{{ props.label }}</button>
+      @click="$emit('click')">{{ props.label }}
+  </button>
   <button
       v-else
       :class="['ui-button-outline', `ui-button--outline--${variant}`, `${styleClass}`]"
@@ -66,6 +68,7 @@ const emit = defineEmits(['click']);
         @apply bg-teal-800;
       }
     }
+
     &secondary {
       @apply bg-blue-700 text-white;
       &:hover {
@@ -77,13 +80,14 @@ const emit = defineEmits(['click']);
 
 .ui-button-outline {
   @apply p-2 px-4 text-sm rounded;
-  &.ui-button--outline--{
+  &.ui-button--outline-- {
     &primary {
       @apply bg-white border border-teal-700 text-teal-700;
       &:hover {
         @apply bg-teal-50;
       }
     }
+
     &secondary {
       @apply bg-white border border-blue-700 text-blue-700;
     }

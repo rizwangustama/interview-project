@@ -1,11 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
-  middleware: ['auth', "vip" ],
+  middleware: ['auth', "vip"],
 })
 </script>
 
 <template>
-<h1>VIp</h1>
+  <h1>VIp</h1>
 </template>
 
 <style scoped lang="scss">

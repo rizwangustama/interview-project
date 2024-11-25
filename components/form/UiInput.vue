@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { defineEmits, defineProps } from 'vue';
-import type { PropType } from 'vue';
-import { ref, watch } from 'vue';
-import { useInputValidator } from "~/composables/useInputValidator";
+import {defineEmits, defineProps} from 'vue';
+import type {PropType} from 'vue';
+import {ref, watch} from 'vue';
+import {useInputValidator} from "~/composables/useInputValidator";
 
 // Define Props
 const props = defineProps({
@@ -43,7 +43,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue']);
-const { errorMessage, validate } = useInputValidator(props.type);
+const {errorMessage, validate} = useInputValidator(props.type);
 const inputValue = ref(props.modelValue);
 
 watch(
@@ -88,6 +88,7 @@ const handleInput = (event: Event) => {
 
 .form-input {
   @apply py-2 px-3 rounded border border-gray-200 text-sm font-light outline-teal-700;
+
   &::placeholder {
     @apply text-sm font-light;
   }

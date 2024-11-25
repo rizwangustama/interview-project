@@ -1,6 +1,6 @@
-import { useCookie } from "#app";
+import {useCookie} from "#app";
 
-export  default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware((to, from) => {
     const getId: any = useCookie('id').value;
     let id: any;
     if (getId) {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useUserStore } from "~/stores/userStore";
-import { useAuthStore } from "~/stores/authStore";
+import {useUserStore} from "~/stores/userStore";
+import {useAuthStore} from "~/stores/authStore";
 import UiInput from "~/components/form/UiInput.vue";
 
 const storeUser = useUserStore();
@@ -23,7 +23,7 @@ onMounted(async () => {
 <template>
   <div class="bg-white mt-10 overflow-hidden rounded-2xl">
     <div v-if="!isLoading" class="p-10 flex flex-col gap-6">
-<!--      User Detail -->
+      <!--      User Detail -->
       <div class="border border-slate-200 rounded-lg overflow-hidden">
         <div class="bg-teal-50 text-white text-sm px-4 py-2.5">
           <h1 class="text-teal-700 font-semibold">User Profile</h1>
@@ -32,35 +32,43 @@ onMounted(async () => {
           <div class="flex items-center">
             <label class="text-sm w-4/12">User Id</label>
             <div class="w-full">
-              <ui-input name="id" v-model="storeAuth.userDetails.id" :disabled="true" />
+              <ui-input name="id" v-model="storeAuth.userDetails.id" :disabled="true"/>
             </div>
           </div>
           <div class="flex items-center">
             <label class="text-sm w-4/12">User Name</label>
             <div class="w-full">
-              <ui-input name="name" v-model="storeAuth.userDetails.name" :disabled="true" />
+              <ui-input name="name" v-model="storeAuth.userDetails.name" :disabled="true"/>
             </div>
           </div>
           <div class="flex items-center">
             <label class="text-sm w-4/12">User Email</label>
-            <div class="w-full"><ui-input name="email" v-model="storeAuth.userDetails.email" :disabled="true"/></div>
+            <div class="w-full">
+              <ui-input name="email" v-model="storeAuth.userDetails.email" :disabled="true"/>
+            </div>
           </div>
           <div class="flex items-center">
             <label class="text-sm w-4/12">User Phone</label>
-            <div class="w-full"><ui-input name="phone" v-model="storeAuth.userDetails.phone" :disabled="true" /> </div>
+            <div class="w-full">
+              <ui-input name="phone" v-model="storeAuth.userDetails.phone" :disabled="true"/>
+            </div>
           </div>
           <div class="flex items-center">
             <label class="text-sm w-4/12">Username</label>
-            <div class="w-full"><ui-input name="username" v-model="storeAuth.userDetails.username" :disabled="true" /></div>
+            <div class="w-full">
+              <ui-input name="username" v-model="storeAuth.userDetails.username" :disabled="true"/>
+            </div>
           </div>
           <div class="flex items-center">
             <label class="text-sm w-4/12">Website</label>
-            <div class="w-full"><ui-input name="website" v-model="storeAuth.userDetails.website" :disabled="true"/></div>
+            <div class="w-full">
+              <ui-input name="website" v-model="storeAuth.userDetails.website" :disabled="true"/>
+            </div>
           </div>
         </div>
       </div>
 
-<!--      Company-->
+      <!--      Company-->
       <div class="border border-slate-200 rounded-lg overflow-hidden">
         <div class="bg-teal-50 text-white text-sm px-4 py-2.5">
           <h1 class="text-teal-700 font-semibold">Company </h1>
@@ -79,39 +87,33 @@ onMounted(async () => {
             <div class="w-1/2">: {{ storeAuth.userDetails.company?.bs }}</div>
           </div>
         </div>
-
       </div>
 
-<!-- Address -->
+      <!-- Address -->
       <div class="border border-slate-200 rounded-lg overflow-hidden">
         <div class="bg-teal-50 text-white text-sm px-4 py-2.5">
           <h1 class="text-teal-700 font-semibold">Address </h1>
         </div>
-
         <div class="p-4">
-        <div class="flex">
-          <div class="w-1/2">street</div>
-          <div class="w-1/2">: {{ storeAuth.userDetails.address?.street }}</div>
-        </div>
-        <div class="flex">
-          <div class="w-1/2">suite</div>
-          <div class="w-1/2">: {{ storeAuth.userDetails.address?.suite }}</div>
-        </div>
-        <div class="flex">
-          <div class="w-1/2">city</div>
-          <div class="w-1/2">: {{ storeAuth.userDetails.address?.city }}</div>
-        </div>
-        <div class="flex">
-          <div class="w-1/2">zipcode</div>
-          <div class="w-1/2">: {{ storeAuth.userDetails.address?.zipcode }}</div>
-        </div>
+          <div class="flex">
+            <div class="w-1/2">street</div>
+            <div class="w-1/2">: {{ storeAuth.userDetails.address?.street }}</div>
+          </div>
+          <div class="flex">
+            <div class="w-1/2">suite</div>
+            <div class="w-1/2">: {{ storeAuth.userDetails.address?.suite }}</div>
+          </div>
+          <div class="flex">
+            <div class="w-1/2">city</div>
+            <div class="w-1/2">: {{ storeAuth.userDetails.address?.city }}</div>
+          </div>
+          <div class="flex">
+            <div class="w-1/2">zipcode</div>
+            <div class="w-1/2">: {{ storeAuth.userDetails.address?.zipcode }}</div>
+          </div>
         </div>
       </div>
-
-
-
     </div>
-
     <div v-if="isLoading" class="p-10 flex flex-col gap-6">
       <div>
         <div class="space-y-4">
@@ -126,7 +128,6 @@ onMounted(async () => {
           <div class="h-40 bg-gray-200 rounded animate-pulse"></div>
         </div>
       </div>
-
       <div>
         <div class="space-y-4">
           <!-- Skeleton untuk title -->
@@ -140,7 +141,6 @@ onMounted(async () => {
           <div class="h-40 bg-gray-200 rounded animate-pulse"></div>
         </div>
       </div>
-
       <div>
         <div class="space-y-4">
           <!-- Skeleton untuk title -->
@@ -155,12 +155,8 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-
   </div>
 </template>
-
-
-
 
 
 <style scoped lang="scss">
