@@ -1,4 +1,5 @@
-# Nuxt Minimal Starter
+# Project Interview Nuxt Starter
+
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -38,38 +39,28 @@ yarn dev
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+## Login
+This is the First User
 ```bash
-# npm
-npm run build
+# Username
+Bret
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Email
+Sincere@april.biz
 ```
 
-Locally preview production build:
-
+This is the second User
 ```bash
-# npm
-npm run preview
+# Username
+Delphine
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+# Email
+Chaim_McDermott@dana.io
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+For more details please visit jsonplaceholder `https://jsonplaceholder.typicode.com/users` and please customize it because this login uses that api
+## Authors
+
+- [Linkedin](https://www.linkedin.com/in/rizwangustama)
+- [Whatsapp](https://wa.me/6285523951105)
+- [Email](mailto:rizonegustama@gmail.com)
