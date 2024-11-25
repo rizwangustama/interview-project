@@ -31,10 +31,12 @@ export const useAuthStore = defineStore('auth', {
                     useCookie('id').value = JSON.stringify(checkUsernameAndEmail[0]?.id);
 
                 } else {
-                    throw  new Error('username atau password tidak boleh kosong')
+                    alert('Username dan Password Salah');
+                    throw  new Error('username atau password tidak boleh kosong');
                 }
             } else  {
-                throw  new Error('username atau password tidak boleh kosong')
+                alert('username atau password tidak boleh kosong');
+                throw  new Error('username atau password tidak boleh kosong');
             }
 
             console.log(this.formLogin);

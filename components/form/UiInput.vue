@@ -87,10 +87,10 @@ const handleInput = (event: Event) => {
 }
 
 .form-input {
-  @apply py-2 px-3 rounded border border-gray-200 text-sm font-light outline-teal-700;
+  @apply py-2 px-3 rounded border border-gray-200 text-sm font-normal outline-teal-700;
 
   &::placeholder {
-    @apply text-sm font-light;
+    @apply text-sm font-normal;
   }
 }
 

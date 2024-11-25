@@ -18,6 +18,9 @@ const submitLogout = () => {
 const accessVip = () => {
   router.push('/dashboard/vip');
 }
+const gotoDashboard = () => {
+  router.push('/dashboard');
+}
 </script>
 
 <template>
@@ -25,7 +28,7 @@ const accessVip = () => {
     <div class="container">
       <div class="flex justify-between items-center">
         <div>
-          <h2 class="text-white font-semibold">Frontend Developer</h2>
+          <h2 class="text-white font-semibold cursor-pointer" @click="gotoDashboard">Frontend Developer</h2>
         </div>
         <div>
           <ul class="flex gap-4">

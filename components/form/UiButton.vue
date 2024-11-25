@@ -76,6 +76,13 @@ const emit = defineEmits(['click']);
       }
     }
   }
+
+  &:disabled {
+    @apply bg-slate-100 text-slate-500;
+    &:hover {
+      @apply bg-slate-200 text-slate-500;
+    }
+  }
 }
 
 .ui-button-outline {
@@ -90,6 +97,13 @@ const emit = defineEmits(['click']);
 
     &secondary {
       @apply bg-white border border-blue-700 text-blue-700;
+    }
+  }
+
+  &:disabled {
+    @apply bg-slate-100 text-slate-500 border border-slate-300;
+    &:hover {
+      @apply bg-slate-200 text-slate-500;
     }
   }
 }

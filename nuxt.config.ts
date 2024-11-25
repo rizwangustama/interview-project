@@ -14,4 +14,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  nitro: {
+    routeRules: {
+      '/': { redirect: '/login' },
+    },
+  },
 })
